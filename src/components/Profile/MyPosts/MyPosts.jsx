@@ -4,18 +4,17 @@ import Post from './Post/Post';
 
 const MyPosts = (props) => {
     let postsElements =
-        props.posts.map( p => <Post message={p.message} likesCount={p.likesCount}/>);
+        props.posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>);
 
     let newPostElement = React.createRef();
 
     let addPost = () => {
-        let text = newPostElement.current.value;
-        props.addPost();
+        props.dispatch({type: 'ADD-POST'});
     }
 
     let onPostChage = () => {
         let text = newPostElement.current.value;
-        props.updateNewPostText(text);
+        props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: text});
     }
 
     return (
@@ -26,11 +25,11 @@ const MyPosts = (props) => {
                     <textarea onChange={onPostChage} ref={newPostElement} value={props.newPostText}/>
                 </div>
                 <div>
-                    <button onClick={ addPost }>Add post</button>
+                    <button onClick={addPost}>Add post</button>
                 </div>
             </div>
             <div className={s.posts}>
-                { postsElements }
+                {postsElements}
             </div>
         </div>
     )
