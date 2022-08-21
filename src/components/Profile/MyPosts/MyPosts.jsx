@@ -1,20 +1,21 @@
 import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './Post/Post';
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/state";
+
+
 
 const MyPosts = (props) => {
     let postsElements =
         props.posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>);
 
-    let newPostElement = React.createRef();
-
     let addPost = () => {
-        props.dispatch({type: 'ADD-POST'});
+        props.dispatch(addPostActionCreator());
     }
 
-    let onPostChage = () => {
-        let text = newPostElement.current.value;
-        props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: text});
+    let onPostChage = (e) => {
+        let text = e.target.value;
+        props.dispatch(updateNewPostTextActionCreator(text));
     }
 
     return (
@@ -22,7 +23,7 @@ const MyPosts = (props) => {
             <h3>My posts</h3>
             <div>
                 <div>
-                    <textarea onChange={onPostChage} ref={newPostElement} value={props.newPostText}/>
+                    <textarea onChange={onPostChage} value={props.newPostText}/>
                 </div>
                 <div>
                     <button onClick={addPost}>Add post</button>
