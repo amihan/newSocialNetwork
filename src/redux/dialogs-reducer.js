@@ -40,6 +40,7 @@ const dialogsReducer = (state = initialState, action) => {
             state.newMessage = '';
             return state;
         case CHANGE_MESSAGE:
+
             state.newMessage = action.newMessage;
             return state;
         default:
