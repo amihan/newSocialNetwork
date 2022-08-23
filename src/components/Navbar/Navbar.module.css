@@ -12,3 +12,14 @@
 .item a.activeLink {
     color: gold;
 }
+.link{
+    display: flex;
+    justify-content: center;
+    padding: 5px 0;
+}
+
+.item{
+    border-radius: 50px;
+    border:1px solid #000;
+    margin-bottom: 15px;
+}
