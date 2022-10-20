@@ -1,40 +1,40 @@
-.img{
+.img {
     height: 150px;
     border-radius: 50%;
     margin-bottom: 15px;
     text-align: left;
 }
 
-.info{
+.info {
     display: grid;
     grid-template-columns: 200px auto;
     margin-bottom: 20px;
-    margin-top:20px;
+    margin-top: 20px;
 }
 
-.ava{
+.ava {
     display: flex;
     flex-direction: column;
 }
 
-.content{
+.content {
     display: flex;
     justify-content: space-between;
     margin-right: 20px;
     margin-left: 20px;
     padding: 20px;
-    border:1px solid #000;
+    border: 1px solid #000;
     border-radius: 20px;
 }
 
-.name, .city{
+.name, .city {
     font-size: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.selectPage{
+.selectPage {
     font-weight: 900;
 }
 
