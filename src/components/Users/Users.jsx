@@ -10,6 +10,7 @@ let Users = (props) => {
         pages.push(i);
     }
     return <div>
+        {/*Отображение номеров старинцы с активной страницей*/}
         <div>
             {pages.map(p => {
                 return <span className={props.currentPage === p && s.selectPage}
@@ -39,8 +40,8 @@ let Users = (props) => {
                             <span>{u.status}</span>
                         </div>
                         <div className={s.city}>
-                            <span>{'u.location.city'}</span>
-                            <span>{'u.location.country'}</span>
+                            <span>{'Город'}</span>
+                            <span>{'Страна'}</span>
                         </div>
                     </div>
                 </div>
